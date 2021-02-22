@@ -1,0 +1,73 @@
+
+ <div class="table-global-wrapper">
+    <mat-form-field>
+        <mat-select (selectionChange)="getSelectedData($event.value)" placeholder="Select Key">
+          <mat-option [value]="'level'">Level</mat-option>
+          <mat-option [value]="'messageTemplate'">Message Template</mat-option>
+          <mat-option [value]="'renderedMessage'">Rendered Message</mat-option>
+          <mat-option [value]="'properties'">Properties</mat-option>
+        </mat-select>
+      </mat-form-field>&nbsp;&nbsp;&nbsp;
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Value" [(ngModel)]="searchText" name="textsearch" type="text" autocomplete="off">
+        </mat-form-field>&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button style="background: #3f51b5;color: white;" type="button" (click)="getElasticDataList()">
+            <span>Search</span>
+          </button>
+  <div class="admin-list application-table-wrapper">
+      <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
+          <ng-container matColumnDef="timestamp">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header class="name-field name"> Timestamp
+              </th>
+              <td mat-cell *matCellDef="let element" class="name-filed name-data name row-text">
+               <span>{{element.timestamp}}</span>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="level">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="label"> Level
+                </th>
+                <td mat-cell *matCellDef="let element" class="label row-tex email-data">
+                  <span>{{element.level}}</span>
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="messageTemplate">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="label"> Message Template
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="label row-text email-data">
+                    <span>{{element.messageTemplate}}</span>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="renderedMessage">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="label"> Rendered Message
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="label row-text email-data">
+                    <span>{{element.renderedMessage}}</span>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="exception">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="label"> Exception
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="label row-text email-data">
+                    <span>{{element.exception}}</span>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="properties">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="label"> Properties
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="label row-text email-data">
+                    <span>{{element.properties}}</span>
+                  </td>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+
+      </table>
+      <!-- <div class="pagination-wrapper">
+        <mat-paginator [length]="pagination.totalRecords" [pageSize]="pagination.pageSize" [pageSizeOptions]="[5, 10, 25, 50, 100]"
+        (page)="pageChange($event)">
+        </mat-paginator>
+
+      </div> -->
+    </div>
+</div>

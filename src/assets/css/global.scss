@@ -1,0 +1,2004 @@
+// split button css
+
+.splitbtn-wrapper {
+  position: relative;
+  .split-btn {
+    padding: 8px 15px;
+    border: 1px solid $primary;
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
+    @include content-style($primary, $font-14, $regular);
+    text-transform: capitalize;
+    background: $foreground;
+    width: 136px;
+  }
+
+  &:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown {
+    // position: absolute;
+    // display: inline-block;
+    // height: 100%;
+    position: relative;
+    display: inline-block;
+    height: 37px;
+    vertical-align: bottom;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $dropdown-bg;
+    min-width: 128px;
+    box-shadow: 0px 0px 10px $shadow;
+    z-index: 1;
+    right: 1px;
+    left: 1px;
+    text-transform: capitalize;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+    background: $foreground;
+    // border-bottom: 1px solid $foreground;
+    @include content-style($text, $font-14, $regular);
+    cursor: pointer;
+    &:last-child {
+      border: 0;
+    }
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
+  .btn {
+    padding: 0px 10px;
+    height: 100%;
+  }
+}
+
+.select-wrapper {
+  .mat-select-value-text span {
+    color: $primary;
+    @include content-style($primary, $font-30, $regular);
+  }
+  .note {
+    display: block;
+    @include content-style($placeholder, $font-14, $regular);
+    margin-top: -11px;
+  }
+  .top-left {
+    display: inline-block;
+  }
+  mat-form-field {
+    min-width: 250px;
+    .label-text {
+      @include content-style($primary, $font-24, $regular);
+      text-transform: capitalize;
+    }
+  }
+  // split button
+  .splitbtn-wrapper {
+    float: right;
+    margin-top: 30px;
+    .split-btn {
+      span {
+        height: 19px;
+        line-height: 18px;
+        padding: 0px 5px;
+        background: $primary;
+        margin-right: 5px;
+        display: inline-block;
+        border-radius: 50%;
+        i {
+          @include content-style($foreground, $font-11, $regular);
+        }
+      }
+    }
+    .down-arrow {
+      background: $secondary;
+      border: 1px solid $primary;
+      border-radius: 0px 5px 5px 0px;
+      border-left: 0;
+      .fa-angle-down {
+        @include content-style($primary, $font-16, $bold);
+      }
+    }
+  }
+}
+.append {
+  cursor: pointer !important;
+}
+
+// search section
+.search-section {
+  position: relative;
+  max-width: 70%;
+  margin-top: 30px;
+  input {
+    line-height: 40px;
+    height: 40px;
+    padding: 0px 10px 0px 40px;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid $border;
+    border-radius: 5px;
+    @include content-style($text, $font-16, $regular);
+  }
+  button.search-clear{
+    position: absolute;
+    right: 0px;
+  }
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    @include content-style($placeholder, $font-18, $regular);
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    @include content-style($placeholder, $font-18, $regular);
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    @include content-style($placeholder, $font-18, $regular);
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    @include content-style($placeholder, $font-18, $regular);
+  }
+  &:before {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-family: fontawesome;
+    content: "\f002";
+    color: $placeholder;
+  }
+
+}
+
+// table section
+
+.table-wrapper {
+  background: transparent;
+  .mat-sort-header-container {
+    text-align: center;
+    display: inline-flex;
+    position: relative;
+  }
+  table {
+    border-radius: $header-border-top;
+    background: transparent;
+    box-shadow: none;
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+  }
+  tbody {
+    max-height: calc(100vh - 350px);
+    overflow: auto;
+    width: 100%;
+    display: inline-block;
+  }
+  tbody,
+  thead {
+    tr {
+      display: table;
+      width: 100%;
+    }
+  }
+  .mat-header-row {
+    background: $secondary;
+    height: 36px;
+    border-radius: $header-border-top;
+    .mat-header-cell {
+      @include content-style($primary, $font-18, $regular);
+      text-align: center;
+      padding: 0px 10px;
+      box-sizing: border-box;
+    }
+    .name-field {
+      text-align: left;
+      padding-left: 43px;
+    }
+    .label-field {
+      text-align: left;
+      padding-left: 43px;
+    }
+  }
+  .mat-row {
+    height: 36px;
+    &:hover {
+      background: rgb(240, 243, 250);
+    }
+    .mat-cell {
+      @include content-style($text, $font-14, $regular);
+      text-align: center;
+      padding: 0px 10px;
+      box-sizing: border-box;
+      word-break: break-all;
+    }
+    .name-data {
+      padding-left: 20px;
+      text-align: left;
+      padding-top: 2px;
+    }
+  }
+  .icon {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .action-icon {
+    margin-right: 10px;
+    font-size: $font-16;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .fa-trash-o {
+    color: $color-red;
+  }
+}
+
+.application-table-wrapper {
+  background: transparent;
+  .mat-sort-header-container {
+    text-align: center;
+    display: inline-flex;
+    position: relative;
+  }
+  table {
+    border-radius: $header-border-top;
+    background: transparent;
+    box-shadow: none;
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+  }
+  tbody {
+    max-height: calc(100vh - 265px);
+    //max-height: calc(100vh - 367px);
+    overflow: auto;
+    width: 100%;
+    display: inline-block;
+  }
+  tbody,
+  thead {
+    tr {
+      display: table;
+      width: 100%;
+    }
+  }
+  .mat-header-row {
+    background: $secondary;
+    height: 36px;
+    border-radius: $header-border-top;
+    .mat-header-cell {
+      @include content-style($primary, $font-18, $regular);
+      text-align: center;
+      padding: 0px 10px;
+      box-sizing: border-box;
+    }
+    .name-field {
+      text-align: left;
+      padding-left: 43px;
+    }
+    .label-field {
+      text-align: left;
+      padding-left: 43px;
+    }
+  }
+  .mat-row {
+    height: 36px;
+    &:hover {
+      background: rgb(240, 243, 250);
+    }
+    .mat-cell {
+      @include content-style($text, $font-14, $regular);
+      text-align: center;
+      padding: 0px 10px;
+      box-sizing: border-box;
+      word-break: break-all;
+    }
+    .name-data {
+      padding-left: 20px;
+      text-align: left;
+      padding-top: 2px;
+    }
+  }
+  .icon {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .action-icon {
+    margin-right: 10px;
+    font-size: $font-16;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .fa-trash-o {
+    color: $color-red;
+  }
+}
+
+// buttons
+
+.btn-container {
+  text-align: center;
+  padding: 15px 10px;
+  box-sizing: border-box;
+  border-top: 1px solid $border;
+  .btn {
+    height: 26px;
+    line-height: 26px;
+    padding: 0px 25px;
+    font-size: $font-14;
+    text-transform: capitalize;
+    border-radius: 5px;
+    box-shadow: none;
+    font-weight: $regular;
+  }
+  .dark {
+    background: $primary;
+    color: $foreground;
+    border: 0;
+  }
+  .light {
+    border: 1px solid $primary;
+    color: $primary;
+    box-sizing: border-box;
+    margin-right: 3px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $dropdown-bg;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+.table-wrapper {
+  margin-top: 30px;
+  table {
+    width: 100%;
+  }
+  .fa-sort-amount-desc {
+    display: inline-block;
+    font-size: $font-14;
+    margin-left: 3px;
+  }
+  .name {
+    width: 25%;
+    display: inline-block;
+    height: 100%;
+    line-height: 41px;
+  }
+  .type {
+    width: 20%;
+    display: inline-block;
+    height: 100%;
+    line-height: 34px;
+    .mat-sort-header-arrow {
+      position: absolute;
+      right: -18px;
+      top: 10px;
+    }
+  }
+  .date {
+    width: 25%;
+    display: inline-block;
+    height: 100%;
+    line-height: 41px;
+  }
+  .label {
+    width: 25%;
+    text-align: inherit;
+    display: inline-block;
+    height: 100%;
+    line-height: 41px;
+  }
+  .action {
+    width: 25%;
+    display: inline-block;
+    height: 100%;
+    line-height: 41px;
+  }
+}
+
+.application-table-wrapper{
+  margin-top: 30px;
+  table {
+    width: 100%;
+  }
+  .fa-sort-amount-desc {
+    display: inline-block;
+    font-size: $font-14;
+    margin-left: 3px;
+  }
+  .name {
+    width: 25%;
+    display: inline-block;
+    height: 100%;
+    line-height: 41px;
+  }
+  .type {
+    width: 20%;
+    display: inline-block;
+    height: 100%;
+    line-height: 34px;
+    .mat-sort-header-arrow {
+      position: absolute;
+      right: -18px;
+      top: 10px;
+    }
+  }
+  .date {
+    width: 25%;
+    display: inline-block;
+    height: 100%;
+    line-height: 41px;
+  }
+  .label {
+    width: 25%;
+    text-align: inherit;
+    display: inline-block;
+    height: 100%;
+    line-height: 41px;
+  }
+  .action {
+    width: 10%;
+    display: inline-block;
+    height: 100%;
+    line-height: 41px;
+  }
+}
+
+// input field
+
+.list {
+  ui-input {
+    width: 75%;
+    min-width: 170px;
+    display: inline-block;
+  }
+  .mat-form-field-infix {
+    border: 0;
+  }
+  .mat-input-element {
+    @include content-style($primary, $font-12, $regular);
+    text-transform: none;
+  }
+  .mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline,
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-image: none;
+    background-color: $placeholder;
+  }
+  .mat-checkbox {
+    margin-top: 19px;
+    display: inline-block;
+  }
+  .mat-form-field-disabled .mat-form-field-infix {
+    background: $disabled;
+  }
+}
+
+.disabled .mat-form-field-flex {
+  background: $disabled;
+}
+
+// listing section
+
+.list-container.mat-list-base {
+  padding-top: 0px;
+  height: calc(100vh - 388px);
+  overflow: auto;
+  .mat-list-item {
+    height: 36px;
+    border-bottom: 1px solid $border;
+    position: relative;
+    cursor: pointer;
+    .fa-arrows {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      display: none;
+    }
+    .mat-icon-button  {
+      position: absolute;
+      right: 15px;
+      display: none;
+    }
+    &:hover {
+      box-shadow: 0px 0px 10px rgba(8, 140, 219, 0.2);
+      .fa-arrows {
+        display: block;
+      }
+      .mat-icon-button {
+        display: block;
+      }
+    }
+    .mat-list-item-content {
+      @include content-style($primary, $font-14, $regular);
+      word-break: break-all;
+    }
+  }
+}
+
+.list-container-userEditor.mat-list-base{
+  height: 230px;
+  //height: calc(100vh - 400px);
+}
+
+@media (max-width: 769px) and (min-width: 500px) {
+  .list-container-userEditor.mat-list-base {
+    height: calc(100vh - 847px);
+}
+
+.ql-container{
+  height: 259px !important;
+}
+}
+
+@media (max-width: 2560px) and (min-width: 1921px) {
+  .list-container-userEditor.mat-list-base {
+    height: calc(100vh - 854px);
+}
+}
+
+@media (max-width: 1920px) and (min-width: 1440px) {
+  .list-container-userEditor.mat-list-base {
+    height: 225px;
+   // height: calc(100vh - 528px);
+}
+}
+
+.email-section {
+  .mat-form-field.mat-focused .mat-form-field-ripple,
+  .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+    height: 1.5px;
+  }
+  .ql-container.ql-snow {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  .input-container {
+    .mat-form-field-underline {
+      bottom: 5px;
+    }
+    .mat-form-field-wrapper {
+      padding: 5px !important;
+      .mat-form-field-label-wrapper span {
+        @include content-style($primary, $font-14, $regular);
+      }
+    }
+  }
+}
+
+// template selection page
+.template-selection {
+  .mat-form-field-appearance-legacy {
+    .mat-form-field-underline {
+      .mat-form-field-wrapper {
+        padding-bottom: 10px;
+      }
+    }
+  }
+  .note {
+    color: $placeholder;
+  }
+}
+
+.options-area {
+  mat-label {
+    @include content-style($placeholder, $font-13, $regular);
+    display: block;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+  .mat-form-field-label-wrapper .action-label {
+    font-size: $font-18;
+  }
+  .mat-radio-label-content {
+    @include content-style($text, $font-13, $regular);
+  }
+  .mat-radio-checked .mat-radio-label-content {
+    color: $primary;
+  }
+  .action mat-form-field {
+    width: 85%;
+  }
+}
+.attachment-container {
+  box-sizing: border-box;
+  background: $attachment-bg;
+  min-height: 100px;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid $border;
+  .delete-container {
+    height: 81px;
+    width: 90px;
+    background-color: $disabled;
+    border-radius: 50%;
+    display: inline-block;
+    top: -36px;
+    right: -40px !important;
+    float: right;
+    position: absolute;
+
+    .delete {
+      margin-left: 24px;
+      margin-top: 40px;
+      color: $color-red;
+      line-height: 25px;
+      cursor: pointer;
+      display: inline-block;
+    }
+  }
+  .attachment {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    text-transform: capitalize;
+    @include content-style($color-gray, $font-14, $regular);
+  }
+}
+
+.template-selection .table-wrapper tbody {
+  max-height: calc(100vh - 360px);
+}
+// pagination section
+
+.pagination-wrapper {
+  margin-top: 10px;
+  .mat-paginator-container {
+    padding: 0;
+  }
+}
+
+// template creation page
+
+@import "~src/assets/css/typography";
+
+.top-section {
+}
+.list {
+  overflow: hidden;
+  padding-top: 30px;
+  box-sizing: border-box;
+  li {
+    width: 20%;
+    float: left;
+  }
+  .attachment {
+    width: fit-content;
+    position: relative;
+    padding-right: 70px;
+    text-align: center;
+    width: 15%;
+    box-sizing: border-box;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: calc(100% + 20px);
+      background: $placeholder;
+      right: 35px;
+      top: -10px;
+    }
+  }
+  .description {
+    width: 25%;
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+  label {
+    display: block;
+    @include content-style($placeholder, $font-12, $regular);
+    text-transform: capitalize;
+    margin-bottom: 5px;
+  }
+}
+// main content section
+.content-area {
+  margin-top: 20px;
+}
+aside {
+  width: 20%;
+  float: left;
+  border: 1px solid $border;
+  border-radius: 5px;
+  .mat-form-field {
+    width: 100%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    @include content-style($placeholder, $font-14, $regular);
+  }
+  .search-container {
+    position: relative;
+    background: $dropdown-bg;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    padding: 5px 0px;
+    &:before {
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      font-family: fontawesome;
+      content: "\f002";
+      @include content-style($placeholder, $font-12, $regular);
+    }
+    .mat-form-field-infix input {
+      width: calc(100% - 25px);
+    }
+  }
+}
+
+// Email section
+
+.email-section {
+  float: left;
+  width: calc(80% - 17px);
+  margin: 0px 0px 0px 15px;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0px;
+  .wrap {
+    padding: 0px 15px;
+    box-sizing: border-box;
+    .input-container {
+      width: 100% !important;
+    }
+  }
+  .data-container {
+    height: calc(100vh - 320px);
+    overflow: auto;
+    .to input {
+      width: calc(100% - 100px);
+      display: inline-block;
+    }
+    .append {
+      display: inline-block;
+      margin-right: 20px;
+      color: $placeholder;
+      float: right;
+      cursor: pointer;
+    }
+    h2{
+      padding: 10px 20px;
+      background: $secondary;
+      color: $primary;
+      border-radius: $header-border-top;
+    }
+  }
+  .editor {
+    margin-top: 25px;
+    .ql-toolbar.ql-snow {
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+  h2 {
+    padding-left: 0;
+  }
+  .wrap {
+    display: flex;
+    label {
+      display: inline-block;
+      width: 60px;
+      align-self: flex-end;
+      font-weight: $regular;
+    }
+    .input-container {
+      width: calc(100% - 60px);
+    }
+  }
+  .btn-container button:last-child {
+    margin-left: 15px;
+  }
+}
+
+// Template view page
+
+.template-view-wrapper {
+  .list {
+    .mat-checkbox {
+      margin-top: 0;
+    }
+    .attachment {
+      width: 15%;
+      padding: 0;
+      .wrap {
+        float: left;
+      }
+      &:after {
+        width: 0;
+      }
+    }
+    .description {
+      width: 17%;
+    }
+  }
+  .template-section {
+    border: 1px solid $border;
+    border-radius: 8px;
+    margin-top: 30px;
+    // :first-child {
+    //   border-radius: 7px;
+    // }
+    div {
+      padding: 10px 20px;
+      box-sizing: border-box;
+      label,
+      span {
+        @include content-style($text, $font-14, $regular);
+      }
+      label {
+        text-transform: capitalize;
+        display: inline-block;
+        width: 70px;
+      }
+    }
+    .email-content {
+      quill-view-html div{
+        padding: 0px !important;
+      }
+    }
+
+    .from {
+      border-bottom: 1px solid $border;
+      border-top-right-radius: 7px;
+      border-top-left-radius: 7px;
+      background: $template-bg;
+    }
+    .email-content {
+      border-top: 1px solid $border;
+      height: auto;
+      min-height: 200px;
+      overflow: auto;
+      @include content-style($text, $font-14, $regular);
+      line-height: 20px;
+    }
+    .btn-container {
+      padding: 15px 10px;
+      .dark {
+        margin-right: 15px;
+        span {
+          color: $foreground !important;
+        }
+      }
+    }
+  }
+}
+
+// Template selection page scss
+
+.template-selection {
+  .pagination-wrapper {
+    margin-right: -15px;
+  }
+  .note {
+    margin-top: -10px;
+  }
+  .selection-list {
+    overflow: hidden;
+    margin-top: 30px;
+    .table-wrapper {
+      width: 70%;
+      float: left;
+      margin-top: 0;
+      .name {
+        width: 60%;
+      }
+      .type {
+        width: 40%;
+      }
+    }
+    .output-section {
+      width: calc(30% - 20px);
+      float: left;
+      margin-left: 20px;
+      border: 1px solid $border;
+      border-radius: 5px;
+      box-sizing: border-box;
+      .head-section {
+        padding: 10px 15px;
+        background: $secondary;
+        display: flex;
+        margin-top: -1px;
+        border-radius: 5px 5px 0px 0px;
+        h4 {
+          margin-left: 10px;
+        }
+        i {
+          color: $primary;
+        }
+      }
+      .options-area {
+        padding: 15px;
+        h3 {
+          margin-bottom: 12px;
+        }
+        .file {
+          .mat-radio-button {
+            display: inline-block;
+            width: 50%;
+          }
+        }
+        .action {
+          margin-top: 10px;
+        }
+      }
+      .btn-container {
+        padding: 15px;
+        text-align: left;
+        .light {
+          padding: 0px 40px;
+          margin: 0px 7px;
+        }
+      }
+    }
+  }
+}
+
+.output-section {
+  width: calc(30% - 30px);
+  transition: 0.1s linear;
+  transition-duration: 1s;
+  float: left;
+  margin-left: 20px;
+  margin-right: 10px;
+  border: 1px solid $border;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 30px;
+  .mat-radio-container,
+  .mat-radio-outer-circle {
+    height: 16px;
+    width: 16px;
+    .mat-radio-inner-circle {
+      height: 14px;
+      width: 14px;
+      left: 1px;
+      top: 1px;
+    }
+  }
+  .head-section {
+    padding: 10px 15px;
+    width: calc(100% + 1px);
+    box-sizing: border-box;
+    background: $secondary;
+    display: flex;
+    margin-top: -1px;
+    border-radius: 5px 5px 0px 0px;
+    h4 {
+      margin-left: 10px;
+    }
+    i {
+      color: $primary;
+    }
+  }
+  .options-area {
+    padding: 15px;
+    h3 {
+      margin-bottom: 12px;
+    }
+    .file {
+      .mat-radio-button {
+        display: inline-block;
+        width: 50%;
+      }
+    }
+    .action {
+      margin-top: 15px;
+      .mat-form-field-infix {
+        border-top: 0px;
+      }
+      .action-label {
+        margin-bottom: 7px;
+      }
+    }
+  }
+  .btn-container {
+    padding: 15px;
+    .btn-wrap {
+      display: inline-block;
+      margin: 0px 7px;
+      border: 1px solid $primary;
+      border-radius: 5px;
+    }
+    .light {
+      width: 120px;
+      margin: 0px;
+      padding: 0;
+      border: 0;
+    }
+    .merge {
+      width: 160px;
+    }
+  }
+  .mat-select-value-text {
+    color: $primary;
+  }
+  .attachment-listing-wrapper {
+    padding-right: 50px;
+    max-height: 100px;
+    overflow: auto;
+    position: relative;
+    z-index: 999;
+  }
+  .attachmen-lising {
+    width: 100%;
+    li {
+      width: fit-content;
+      text-align: center;
+      padding: 10px;
+      display: inline-block;
+      background: $foreground;
+      margin: 5px;
+      border: 1px solid $border;
+      i {
+        @include content-style($text, $font-20, $regular);
+      }
+      span {
+        display: block;
+        @include content-style($text, $font-12, $regular);
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+@media screen and(min-width:1160px) and (max-width: 1440px) {
+  .output-section {
+    .btn-container {
+      .btn-wrap {
+        margin: 0px 6px;
+      }
+      .light {
+        width: 100px;
+      }
+      .merge {
+        width: 140px;
+      }
+    }
+  }
+}
+@media screen and(min-width:1025px) and (max-width: 1159px) {
+  .output-section {
+    .btn-container {
+      .btn-wrap {
+        margin: 0px 5px;
+      }
+      .light {
+        width: 90px;
+      }
+      .merge {
+        width: 130px;
+      }
+    }
+  }
+}
+
+// Template creation page
+
+.list {
+  overflow: hidden;
+  padding-top: 30px;
+  box-sizing: border-box;
+  li {
+    width: 20%;
+    float: left;
+  }
+  .attachment {
+    width: fit-content;
+    position: relative;
+    padding-right: 70px;
+    text-align: center;
+    width: 15%;
+    box-sizing: border-box;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: calc(100% + 20px);
+      background: $placeholder;
+      right: 35px;
+      top: -10px;
+    }
+  }
+  .description {
+    width: 25%;
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+  label {
+    display: block;
+    @include content-style($placeholder, $font-12, $regular);
+    text-transform: capitalize;
+    margin-bottom: 5px;
+  }
+}
+// main content section
+.content-area {
+  margin-top: 20px;
+}
+aside {
+  width: 20%;
+  float: left;
+  border: 1px solid $border;
+  border-radius: 5px;
+  .mat-form-field {
+    width: 100%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    @include content-style($placeholder, $font-14, $regular);
+  }
+  .search-container {
+    position: relative;
+    background: $dropdown-bg;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    padding: 5px 0px;
+    &:before {
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      font-family: fontawesome;
+      content: "\f002";
+      @include content-style($placeholder, $font-12, $regular);
+    }
+  }
+}
+
+// Email section
+
+.email-section,
+.attachment-section {
+  float: left;
+  width: calc(80% - 17px);
+  margin: 0px 0px 0px 15px;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0px;
+  .wrap {
+    padding: 0px 15px;
+    box-sizing: border-box;
+    .input-container {
+      width: 100% !important;
+    }
+  }
+  .data-container {
+    height: calc(100vh - 308px);
+    overflow: auto;
+    .to input {
+      width: calc(100% - 100px);
+      display: inline-block;
+    }
+    .append {
+      display: inline-block;
+      margin-right: 20px;
+      color: $placeholder;
+      float: right;
+    }
+  }
+  .editor {
+    margin-top: 25px;
+  }
+  h2 {
+    padding-left: 0;
+  }
+  .wrap {
+    display: flex;
+    label {
+      display: inline-block;
+      width: 60px;
+      align-self: flex-end;
+      font-weight: $regular;
+    }
+    .input-container {
+      width: calc(100% - 60px);
+    }
+  }
+  .btn-container button:last-child {
+    margin-left: 14px;
+  }
+}
+
+// local template page
+
+.local-template {
+  .selection-list {
+    display: flex;
+  }
+  .table-wrapper {
+    border: 1px solid $border;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 7px;
+    .data-container {
+      border-radius: 7px;
+      width: 100%;
+      display: inline-block;
+      h3 {
+        padding: 8px 20px;
+        background: $secondary;
+        color: $primary;
+        border-radius: $header-border-top;
+      }
+    }
+  }
+}
+
+// input type upload
+
+.input-wrapper {
+  padding: 40px 0px 40px 20px;
+  min-height: 273px;
+}
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.inputfile + label {
+  @include content-style($foreground, $font-12, $regular);
+  background-color: $primary;
+  display: inline-block;
+  padding: 0px 90px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 5px;
+  width: max-content;
+  position: relative;
+  cursor: pointer;
+  &::after {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    font-family: fontawesome;
+    content: "\f093";
+  }
+}
+
+// Work template section
+
+.work-template {
+  .attachment {
+    &:after {
+      height: calc(100% + 40px);
+    }
+    span {
+      margin-top: 10px;
+      display: inline-block;
+    }
+  }
+  .attachment-section {
+    float: left;
+    width: calc(80% - 17px);
+    margin: 0px 0px 0px 15px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0px;
+    .input-wrapper {
+      min-height: auto;
+    }
+    .inputfile + label {
+      vertical-align: top;
+    }
+    h2 {
+      padding: 10px 20px;
+      background: $secondary;
+      color: $primary;
+      border-radius: $header-border-top;
+      margin: -1px;
+    }
+    .input-wrapper {
+      background: $attachment-bg;
+    }
+    .list-item {
+      height: calc(100vh - 516px);
+      overflow: auto;
+      li {
+        border-top: 1px solid $border;
+        padding: 7px 15px;
+        box-sizing: border-box;
+        div {
+          display: inline-block;
+          padding: 0px 5px;
+          box-sizing: border-box;
+          @include content-style($text, $font-13, $regular);
+        }
+        .file {
+          text-align: left;
+          width: 50%;
+          span {
+            display: inline-block;
+            margin-left: 15px;
+          }
+        }
+        .date {
+          color: $color-date;
+          width: 40%;
+        }
+        .action {
+          text-align: right;
+          width: 10%;
+          padding-right: 15px;
+          .fa-eye {
+            margin-right: 10px;
+            display: inline-block;
+            color: $primary;
+          }
+          .fa-trash-o {
+            color: $color-red;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Work template view page
+
+.work-template-view {
+  .description {
+    width: 20%;
+  }
+  .attachment-section {
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    .list-item {
+      height: calc(100vh - 435px);
+    }
+  }
+}
+
+// email-composer-section
+
+.email-composer-section {
+  .email-section {
+    width: 100%;
+    margin: 20px 0px 0px;
+    .mat-form-field-appearance-legacy {
+      .mat-form-field-wrapper {
+        padding-bottom: 10px;
+        .mat-form-field-underline {
+          bottom: 10px;
+        }
+      }
+    }
+    .wrap {
+      position: relative;
+      .append {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        cursor: pointer;
+      }
+      ui-input {
+        width: 100%;
+      }
+    }
+    .data-container {
+      height: calc(100vh - 215px);
+    }
+    .editor {
+      margin-top: 5px;
+    }
+  }
+  .from {
+    background: $attachment-bg;
+    padding-bottom: 20px;
+    padding-top: 8px;
+    border-bottom: 1px solid $border;
+    border-radius: $header-border-top;
+    margin-bottom: 8px;
+  }
+  .add-attachment {
+    padding: 20px;
+    ul {
+      display: inline-block;
+      margin-left: 40px;
+      margin-top: 5px;
+      width:calc(100% - 200px);
+      vertical-align: middle;
+      li {
+        display: inline-block;
+        min-width: 180px;
+        height: 35px;
+        line-height: 35px;
+        margin-right: 15px;
+        border: 1px solid $border;
+        border-radius: 4px;
+        padding: 0px 5px;
+        position: relative;
+        box-sizing: border-box;
+        vertical-align: middle;
+        margin-bottom: 10px;
+        // &::after {
+        //   position: absolute;
+        //   content: "\f107";
+        //   right: 7px;
+        //   top: 0;
+        //   font-family: fontawesome;
+        //   font-weight: $bold;
+        //   font-size: $font-12;
+        // }
+        div {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .icon {
+          margin-right: 10px;
+          margin-top: -1px;
+          i {
+            @include content-style($image-icon, $font-20, $regular);
+          }
+          .fa-file-word-o {
+            color: $wordfile-icon;
+          }
+          .fa-file-pdf-o {
+            color: $color-red;
+          }
+        }
+        .details {
+          line-height: 1;
+          margin-top: 3px;
+          .name {
+            @include content-style($text, $font-12, $regular);
+            display: block;
+            vertical-align: bottom;
+          }
+          .size {
+            @include content-style($border, $font-10, $regular);
+            vertical-align: top;
+          }
+          span {
+            line-height: 12px;
+          }
+        }
+      }
+    }
+    .input-wrapper {
+      padding: 5px 15px 5px 0px;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      &::after {
+        position: absolute;
+        content: "";
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 0.5px;
+        background: $border;
+      }
+    }
+    .inputfile + label {
+      padding: 0px 10px 0px 25px;
+      &::after {
+        content: "\f0c6";
+        left: 10px;
+        top: -1px;
+      }
+    }
+  }
+}
+.selected-row {
+  float: left;
+  width: 70%;
+  padding-right: 0;
+  .name {
+    width: 50% !important;
+  }
+  .type {
+    width: 25% !important;
+  }
+  .date {
+    width: 25% !important;
+  }
+  .action {
+    width: 25% !important;
+  }
+  .search-section,
+  .table-wrapper {
+    width: 100% !important;
+  }
+}
+.table-wrapper .selected {
+  background: rgb(240, 243, 250);
+}
+
+// template listing page search section
+
+.template-listing-search {
+  .search-section {
+    display: inline-block;
+    width: 70%;
+  }
+  .search-dropdown {
+    margin-top: 20px;
+    display: inline-block;
+    margin-left: 20px;
+    .mat-select-arrow {
+      color: $primary;
+    }
+    mat-label {
+      color: $primary;
+    }
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+    .mat-form-field-underline {
+      height: 0;
+    }
+    .mat-form-field-wrapper {
+      border: 1px solid $primary;
+      border-radius: 5px;
+      .mat-form-field-label {
+        padding-left: 5px;
+        margin-top: 2px;
+      }
+    }
+    .mat-form-field-infix {
+      border: 0;
+      padding: 10px 0px 10px 5px !important;
+    }
+    .mat-focused {
+      .mat-form-field-ripple {
+        height: 0;
+      }
+      .mat-form-field-label {
+        display: none !important;
+      }
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-label {
+      display: none;
+    }
+    .mat-form-field-appearance-legacy.mat-form-field-hide-placeholder .mat-form-field-label {
+      display: block;
+    }
+  }
+}
+.table-listing-page {
+  margin-top: 30px;
+  // margin-left: 16px;
+  // margin-right: 16px;
+  // box-sizing: border-box;
+}
+.select-wrapper.local-template {
+  padding-right: 0px;
+  width: calc(70% - 6px);
+}
+
+// Popup section
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(68, 68, 68, 0.5);
+  transition: opacity 500ms;
+  .modal-heading {
+    padding: 10px 15px;
+    background: $secondary;
+    color: $foreground;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    height: 20px;
+    line-height: 19px;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+    background: $foreground;
+    cursor: pointer;
+    i {
+      @include content-style($text, $font-14, $regular);
+    }
+  }
+  .modal-container {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $foreground;
+    border-radius: 5px;
+    .template-section {
+      border-radius: 0px 0px 5px 5px;
+    }
+  }
+}
+
+// Warning popup
+
+.overlay .wrapper-popup {
+ // width: 60%;
+//  max-width: 800px;
+  .head-section {
+    padding: 20px 50px;
+    border-bottom: 1px solid $border;
+    h2 {
+      background: transparent;
+      @include content-style($color-warning, $font-22, $regular);
+      padding: 0px;
+      position: relative;
+      text-transform: none;
+      &::before {
+        content: "\f071";
+        font-family: fontawesome;
+        top: 6px;
+        left: -28px;
+        @include content-style($color-warning, $font-17, $regular);
+        position: absolute;
+      }
+    }
+    p {
+      margin: 5px 0px 0px;
+      @include content-style($placeholder, $font-14, $regular);
+    }
+  }
+  .info {
+    padding: 20px 50px;
+    min-height: 180px;
+    max-height: 250px;
+    overflow: auto;
+    li {
+      margin-bottom: 20px;
+      label,
+      p {
+        @include content-style($text, $font-14, $semibold);
+      }
+      label {
+        text-transform: capitalize;
+      }
+      p {
+        margin: 5px 0px 0px;
+        font-weight: $regular;
+      }
+    }
+  }
+  .btn-container {
+    background: $attachment-bg;
+    border-radius: 0px 0px 7px 7px;
+    .dark {
+      margin-right: 20px;
+    }
+  }
+}
+
+// add attachment popup
+
+.attachment-popup {
+  width: 100% !important;
+  margin-left: 0;
+  h2 {
+    padding: 10px 15px;
+    border-bottom: 1px solid $border;
+    background: $secondary;
+    border-radius: $header-border-top;
+  }
+  .input-wrapper {
+    min-height: 0;
+  }
+}
+.list-item {
+  height: calc(100vh - 478px);
+  overflow: auto;
+  li {
+    border-top: 1px solid $border;
+    padding: 7px 15px;
+    box-sizing: border-box;
+    div {
+      display: inline-block;
+      padding: 0px 5px;
+      box-sizing: border-box;
+      @include content-style($text, $font-13, $regular);
+    }
+    .file {
+      text-align: left;
+      width: 50%;
+      span {
+        display: inline-block;
+        margin-left: 15px;
+      }
+    }
+    .date {
+      color: $color-date;
+      width: 40%;
+    }
+    .action {
+      text-align: right;
+      width: 10%;
+      padding-right: 15px;
+      .fa-eye {
+        margin-right: 10px;
+        display: inline-block;
+        color: $primary;
+      }
+      .fa-trash-o {
+        color: $color-red;
+      }
+    }
+  }
+}
+
+.mat-menu-content {
+  .mat-menu-item .mat-icon {
+    margin-right: 10px;
+    vertical-align: middle;
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  span {
+    @include content-style($text, $font-14, $regular);
+  }
+  .clear {
+    color: $color-red;
+  }
+  .mat-menu-item {
+    height: 32px;
+    line-height: 32px;
+  }
+}
+
+// admin section
+.admin-wrapper {
+  display: flex;
+  app-sidetab {
+    height: calc(100vh - 125px);
+    .nav-list {
+      background: rgb(240, 243, 250);
+      width: 200px;
+      height: 100%;
+      li {
+        padding: 10px 20px;
+        color: $primary;
+        border-bottom: 1px solid $secondary;
+        cursor: pointer;
+        span {
+          text-transform: capitalize;
+          @include content-style($primary, $font-16, $regular);
+        }
+        i {
+          display: inline-block;
+          width: 30px;
+        }
+      }
+      .active {
+        background: $secondary;
+        span {
+          font-weight: $semibold;
+        }
+      }
+    }
+  }
+
+  app-admincontent {
+    width: calc(100% - 240px);
+    margin-left: 20px;
+    .table-wrapper {
+      .action-icon:first-child {
+        margin-right: 20px;
+      }
+      .fa-trash-o {
+        color: $color-warning;
+        font-weight: $bold;
+      }
+    }
+    .top-section {
+      padding: 30px 0px 0px;
+      h2 {
+        display: inline-block;
+        @include content-style($primary, $font-24, $regular);
+      }
+      .add-btn {
+        display: inline-block;
+        float: right;
+        height: 36px;
+        line-height: 36px;
+        padding: 0px 20px;
+        border: 1px solid $primary;
+        text-transform: capitalize;
+        border-radius: 5px;
+        @include content-style($primary, $font-14, $regular);
+        cursor: pointer;
+        span {
+          height: 20px;
+          line-height: 19px;
+          display: inline-block;
+          width: 20px;
+          text-align: center;
+          border-radius: 50%;
+          background: $primary;
+          text-transform: capitalize;
+          margin-right: 7px;
+          i {
+            @include content-style($foreground, $font-12, $regular);
+          }
+        }
+      }
+    }
+    .search-section {
+      max-width: 85%;
+    }
+  }
+  .admin-data-table {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 7px;
+    .data-cell {
+      width: 28%;
+      height: 36px;
+      line-height: 34px;
+      display: inline-block;
+    }
+    .action {
+      width: 16%;
+    }
+    .name {
+      text-align: left;
+      padding-left: 20px;
+    }
+    .mat-row.active {
+      background: rgb(240, 243, 250);
+      td {
+        font-weight: $semibold;
+      }
+    }
+  }
+  tbody {
+    max-height: calc(100vh - 320px);
+    border-radius: 0px 0px 7px 7px;
+  }
+}
+
+// Adduser popup
+
+.adduser-popup {
+  .content-section {
+    padding: 30px 50px 15px;
+    box-sizing: border-box;
+    h2 {
+      @include content-style($primary, $font-24, $semibold);
+    }
+    .info {
+      padding: 0;
+      overflow: hidden;
+      margin-top: 30px;
+      li {
+        width: 40%;
+        float: left;
+        &:nth-child(odd) {
+          margin-right: 20%;
+        }
+        label {
+          @include content-style($color-date, $font-12, $regular);
+        }
+        .mat-form-field-infix {
+          border-top: 0;
+          .mat-input-element {
+            @include content-style($primary, $font-14, $regular);
+          }
+        }
+        mat-form-field {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .btn-container button {
+    margin: 0px 10px !important;
+  }
+}
+
+
+.table-global-wrapper {
+  padding: 0px 16px;
+  box-sizing: border-box;
+}
+
+// invalid email popup
+
+.mat-snack-bar-container {
+  .mat-button-base {
+    float: right;
+    line-height: 2;
+    padding: 0;
+    min-width: auto;
+  }
+  span {
+    vertical-align: middle;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .mat-simple-snackbar-action {
+    margin: 0;
+    display: inline;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .table-wrapper {
+    .mat-row {
+      height: 32px;
+      .mat-cell {
+        font-size: $font-13;
+        line-height: 39px;
+      }
+    }
+    .type {
+      width: 22%;
+    }
+    .action {
+      width: 25%;
+      .action-icon {
+        font-size: $font-14;
+      }
+    }
+  }
+  .list-container.mat-list-base .mat-list-item .mat-list-item-content {
+    font-size: $font-13;
+    padding: 0px 10px;
+  }
+}
+
+h3.blue-header {
+  padding: 8px 20px;
+  background: $secondary;
+  color: $primary;
+  border-radius: $header-border-top;
+}
+
+.cancel-icon{
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
+  opacity: 0.4;
+  margin-left: 8px;
+  margin-right: 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+}
+
+.mat-button-ripple.mat-ripple, .mat-button-focus-overlay {
+  right: -2px !important;
+}
+
+
+//////////////////////////////////// Media Queries////////////////////////////////////////////////

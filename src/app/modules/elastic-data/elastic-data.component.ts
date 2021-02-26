@@ -19,6 +19,7 @@ export interface DataList {
 export class ElasticDataComponent implements OnInit {
   searchText: string;
   selectedData: string;
+  isDisplayRequiredMsz: boolean = false;
   displayedColumns = ['timestamp', 'level', 'messageTemplate', 'renderedMessage', 'exception', 'properties'];
   public dataSource: MatTableDataSource<DataList>;
 
@@ -35,31 +36,43 @@ export class ElasticDataComponent implements OnInit {
    }
 
    getElasticDataList() {
-    this.coreHttpService.get(`list-data/${this.selectedData}=${this.searchText}`).subscribe(res => {
-      this.dataSource = new MatTableDataSource(res.data);
-    }, error=> {
-      console.log(error);
-    })
+     var endpoint = '';
+     if(this.selectedData && this.searchText){
+      endpoint = `search/${this.selectedData}/*${this.searchText}*`;
+      this.isDisplayRequiredMsz = false;
+     } else if(this.searchText) {
+       endpoint = `search/${this.searchText}`;
+       this.isDisplayRequiredMsz = false;
+     } else {
+      this.isDisplayRequiredMsz = true;
+     }
+     if(this.searchText){
+      this.coreHttpService.get(endpoint).subscribe(res => {
+        this.dataSource = new MatTableDataSource(res);
+      }, error=> {
+        console.log(error);
+      })
+     }
    }
 
    ngOnInit() {
-     this.dataSource = new MatTableDataSource([
-       {timestamp: 'Tue Feb 05 2019',
-      level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
-      exception: 'test', properties: 'test' },
-      {timestamp: 'Tue Feb 05 2019',
-      level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
-      exception: 'test', properties: 'test' },
-      {timestamp: 'Tue Feb 05 2019',
-      level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
-      exception: 'test', properties: 'test' },
-      {timestamp: 'Tue Feb 05 2019',
-      level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
-      exception: 'test', properties: 'test' },
-      {timestamp: 'Tue Feb 05 2019',
-      level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
-      exception: 'test', properties: 'test' }
-    ]);
+    //  this.dataSource = new MatTableDataSource([
+    //    {timestamp: 'Tue Feb 05 2019',
+    //   level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
+    //   exception: 'test', properties: 'test' },
+    //   {timestamp: 'Tue Feb 05 2019',
+    //   level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
+    //   exception: 'test', properties: 'test' },
+    //   {timestamp: 'Tue Feb 05 2019',
+    //   level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
+    //   exception: 'test', properties: 'test' },
+    //   {timestamp: 'Tue Feb 05 2019',
+    //   level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
+    //   exception: 'test', properties: 'test' },
+    //   {timestamp: 'Tue Feb 05 2019',
+    //   level: 'Test1', messageTemplate: 'message template', renderedMessage: 'test',
+    //   exception: 'test', properties: 'test' }
+    // ]);
     // console.log(this.dataSource)
    }
 

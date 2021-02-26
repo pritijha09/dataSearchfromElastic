@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseURL : 'https://qa-disabilitytemplateproxy-api.us-e1.cloudhub.io/api/',
+  apiBaseURL : 'http://3.86.200.9/api/',
 };
 
 /*
